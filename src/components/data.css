@@ -1,0 +1,35 @@
+.card {
+    /* margin: 5px; */
+    /* padding: 20px; */
+    box-shadow: 0 4px 8px rgba(8, 3, 3, 0.3);
+    background-color: #f5fbf5; 
+    background-size: cover;
+    color: #050505;
+    border: 1px solid #000;
+    /* border: #050505; */
+}
+.cardy {
+    margin: 5px;
+    color: #050505;
+    border: 1px solid #bdbbbb;
+    background-size: cover;
+    color: #110f0f;
+}
+.jht{
+    top: 16px;
+}
+.dataTable th {
+    font-weight: bold;
+    font-size: 50px; 
+}
+
+.custom-datatable .p-datatable-thead > tr > th,
+.custom-datatable .p-datatable-tbody > tr > td {
+    border-bottom: 1px solid #d7cece; 
+    border-right: 1px solid #c8c4c4; 
+}
+
+.custom-datatable .p-datatable-thead > tr > th:last-child,
+.custom-datatable .p-datatable-tbody > tr > td:last-child {
+    border-right: none; 
+}

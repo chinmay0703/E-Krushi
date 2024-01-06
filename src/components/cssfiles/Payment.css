@@ -1,0 +1,16 @@
+.navbar {
+    background-color: #0a0a0a;
+    color: aqua;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.dhj{
+padding: 5%;
+padding-left: 40%;
+}
+.colw{
+    color: rgb(169, 248, 130);
+}
