@@ -8,7 +8,7 @@ const Backup = () => {
                 <Dashboard></Dashboard>
             </div>
             <div className='container-fluid col-11'>
-                    <h1 className='text-center'>Backup Page</h1>
+                    <h1 className='text-center'>Backup Page!!</h1>
             </div>
         </div>
     )
