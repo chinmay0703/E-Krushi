@@ -133,8 +133,8 @@ const Customer = (props) => {
 
 
     return (
-        <div>
-            <div className='row'>
+        <div className='back'>
+            <div className='row '>
                 <div className='col-2'>
                     <Dashboard />
                 </div>

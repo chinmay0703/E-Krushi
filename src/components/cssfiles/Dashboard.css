@@ -13,7 +13,7 @@ li {
 body {
     font-family: "Poppins", Arial, Helvetica, sans-serif;
     min-height: 100vh;
-    background: rgb(249, 246, 246);
+    background: rgb(255, 255, 255);
     overflow-x: hidden;
     overflow-y: auto;
     /* new scrollbar styles */

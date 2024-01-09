@@ -152,13 +152,13 @@ const Item = (props) => {
     }
 
     return (
-        <div>
+        <div className='back'>
 
-            <div className='row'>
+            <div className='row '>
                 <div className='col-2'>
                     <Dashboard />
                 </div>
-                <div className='container-fluid col-10'>
+                <div className='container-fluid col-10 '>
                     <div className=''>
                         <div className="row ">
                             <div className="container-fluid col-sm-10 py-3 align-center">

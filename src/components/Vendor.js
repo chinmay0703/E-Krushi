@@ -120,7 +120,7 @@ const Vendor = () => {
     }
 
     return (
-        <div>
+        <div className='back'>
             <div className='row'>
                 <div className='col-2'>
                     <Dashboard />
