@@ -258,8 +258,8 @@ const Customer = (props) => {
                             </span>
 
                         </div>
-                        <div className='cardy'  ref={myDivRef} >
-                            <DataTable value={handleFilteredRecords}  showGridlines stripedRows highlightOnHover className="custom-datatable" paginator rows={5} rowsPerPageOptions={[5, 10, 25, 50]} tableStyle={{ minWidth: '50rem' }}
+                        <div className='cardy' ref={myDivRef} >
+                            <DataTable value={handleFilteredRecords} className="custom-datatable" paginator rows={5} rowsPerPageOptions={[5, 10, 25, 50]} tableStyle={{ minWidth: '50rem' }}
                                 paginatorTemplate="RowsPerPageDropdown FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink"
                                 currentPageReportTemplate="{first} to {last} of {totalRecords}" >
                                 <Column field="customerName" header="Name" sortable></Column>
@@ -272,8 +272,14 @@ const Customer = (props) => {
                                     header="Actions"
                                     body={(rowData) => (
                                         <>
-                                            <i className="pi pi-trash mx-1 my-2" style={{ fontSize: '1.2rem' }} onClick={() => handleDelete(rowData.customerId)}></i>
-                                            <i className="pi pi-user-edit mx-1" style={{ fontSize: '1.2rem' }} onClick={() => handleUpdate(rowData.customerId)}></i>
+                                            <i
+                                                className="pi pi-trash mx-1 my-2"
+                                                style={{ fontSize: '1.2rem' }}
+                                                onClick={() => handleDelete(rowData.customerId)}
+                                                title="Delete Customer"
+                                            ></i>
+
+                                            <i className="pi pi-user-edit mx-1" style={{ fontSize: '1.2rem' }} onClick={() => handleUpdate(rowData.customerId)} title="Update Customer"></i>
                                         </>
                                     )}
                                 ></Column>

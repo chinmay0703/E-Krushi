@@ -326,7 +326,7 @@ const Item = (props) => {
 
                         </div>
                         <div className='cardy' ref={myDivRef}>
-                            <DataTable value={handleFilteredRecords} showGridlines stripedRows highlightOnHover tableStyle={{ minWidth: '50rem' }} className="custom-datatable" paginator rows={5} rowsPerPageOptions={[5, 10, 25, 50]} >
+                            <DataTable value={handleFilteredRecords} tableStyle={{ minWidth: '50rem' }} className="custom-datatable" paginator rows={5} rowsPerPageOptions={[5, 10, 25, 50]} >
                                 <Column field="itemName" header="Item Name" style={{ width: '20rem' }} sortable></Column>
                                 <Column field="batch" header="Batch" sortable></Column>
                                 <Column field="expiry" header="ExpiryDate" style={{ width: '50rem' }} sortable></Column>

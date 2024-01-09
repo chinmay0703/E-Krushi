@@ -298,7 +298,7 @@ const Vendor = () => {
 
                         </div>
                         <div className='cardy'>
-                            <DataTable value={handleFilteredRecords} showGridlines stripedRows highlightOnHover tableStyle={{ minWidth: '50rem' }} className="custom-datatable" paginator rows={5} rowsPerPageOptions={[5, 10, 25, 50]} >
+                            <DataTable value={handleFilteredRecords}  highlightOnHover tableStyle={{ minWidth: '50rem' }} className="custom-datatable" paginator rows={5} rowsPerPageOptions={[5, 10, 25, 50]} >
                                 <Column field="name" header="Vendor Name" style={{ width: '20rem' }} sortable></Column>
                                 <Column field="email" header="Email" sortable className='text-center'></Column>
                                 <Column field="address" header="Address" sortable></Column>

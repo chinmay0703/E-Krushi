@@ -2,12 +2,13 @@
     /* margin: 5px; */
     /* padding: 20px; */
     box-shadow: 0 4px 8px rgba(8, 3, 3, 0.3);
-    background-color: #ffffff; 
+    background-color: #ffffff;
     background-size: cover;
     color: #050505;
     border: 1px solid #000;
-   
+
 }
+
 .cardy {
     margin: 5px;
     color: #050505;
@@ -16,24 +17,46 @@
     color: #110f0f;
     box-shadow: 0 4px 8px rgba(0.8, 0.8, 0.5, 0.8);
 }
-.jht{
+
+.jht {
     top: 16px;
 }
+
 .dataTable th {
     font-weight: bold;
-    font-size: 50px; 
+    font-size: 50px;
 }
 
-.custom-datatable .p-datatable-thead > tr > th,
-.custom-datatable .p-datatable-tbody > tr > td {
-    border-bottom: 1px solid #d6d4d4; 
-    border-right: 1px solid #d6d1d1; 
+.custom-datatable .p-datatable-thead>tr>th,
+.custom-datatable .p-datatable-tbody>tr>td {
+    border-bottom: 1px solid #d6d4d4;
+    border-right: 1px solid #d6d1d1;
 }
 
-.custom-datatable .p-datatable-thead > tr > th:last-child,
-.custom-datatable .p-datatable-tbody > tr > td:last-child {
-    border-right: none; 
+.custom-datatable .p-datatable-thead>tr>th:last-child,
+.custom-datatable .p-datatable-tbody>tr>td:last-child {
+    border-right: none;
 }
-.back{
+
+.back {
     background: rgb(241, 244, 247);
+}
+
+/* Add this CSS to your stylesheet or in your component style tag */
+
+/* Style for the tooltip */
+.pi-trash:hover::before {
+
+
+    color: #c53232;
+    
+
+  
+}
+
+.pi-user-edit:hover::before {
+
+
+    color: #cd7e29;
+
 }

@@ -132,6 +132,17 @@ const Purchase = () => {
 // const handleFilteredRecords = records.filter((item) =>
 //   item.itemName.toLowerCase().includes(searchText.toLowerCase())
 // );
+const [isFormVisible, setFormVisibility] = useState(true);
+
+  const handleDropdownToggle = () => {
+    setFormVisibility(!isFormVisible);
+  };
+
+  const [isFormVisiblee, setFormVisibilityy] = useState(true);
+
+  const handleDropdownTogglee = () => {
+    setFormVisibilityy(!isFormVisiblee);
+  };
 
   return (
     <div>
@@ -152,16 +163,20 @@ const Purchase = () => {
                         <div className="card">
                            <div className='card-header bg-dark text-white py-3'>
                             
-                            <h5>Vendor Information</h5>
-                            
+                            <h5>Vendor Information        <span
+                className={` float-end cursor-pointer ${isFormVisible ? 'pi pi-chevron-up' : 'pi pi-chevron-down'}`}
+                onClick={handleDropdownToggle}
+              ></span></h5>
+                           
                             </div>
-                            <div className="card-body">
-                                
-                                <form>
+                            {isFormVisible && (
+            <div className="card-body">
+              
+              <form>
                                     <div className="row">
                                         <div className="col-4">
                                         <div className="form-group ">
-                      <label>Select a Vendor</label>
+                      <label>Select a Vendor </label>
                       <select
                         value={selectedCustomer}
                         onChange={handleCustomerChange}
@@ -229,8 +244,9 @@ const Purchase = () => {
                                       </div>
                                     </div>
                                 </form>
-
-                            </div>
+            </div>
+          )}
+                            
                         </div>
                     </div>
                 </div>
@@ -245,7 +261,10 @@ const Purchase = () => {
                      <div className='card-header bg-dark text-white py-3'>
                
                         <div className=''>
-                        <h5>Item Information</h5>
+                        <h5>Item Information   <span
+                className={` float-end cursor-pointer ${isFormVisiblee ? 'pi pi-chevron-up' : 'pi pi-chevron-down'}`}
+                onClick={handleDropdownTogglee}
+              ></span></h5>
                         </div>
                         
                           {/* <div className='col mx-5'>
@@ -261,142 +280,174 @@ const Purchase = () => {
 
                             
                             </div>
-                   
-                    <div className="card-body ">
-                        <form className=''>
-                            <div className="row ">
-                                <div className="col-sm-4">
-                                <div className="form-group">
-                     <label>Batch No</label>
-                    <select
-                       value={selectedItem}
-                   onChange={handleItemChange}
-                className="form-control"
-                  placeholder='Select an item'
-                   >
-                           <option value="" disabled>Batch No</option>
-                        {recordsItem.map((item) => (
-                              <option key={item.itemId} value={item.itemId}>
-                        {item.batch}
-                     </option>
-                     ))}
-                   </select>
-                   </div>
-                                    <div className="form-group ">
-                                        <label>Item Name</label>
-                                        <input
-                                            type="text"
-                                            value={itemDetails.itemName}
-                                            placeholder="Item Name"
-                                            className="form-control"
-                                        />
-                                    </div>
-                                    
-                                    <div className="form-group ">
-                                        <label>Expiry</label>
-                                        <input
-                                            type="date"
-                                            value={itemDetails.expiry}
-                                            placeholder="Expiry"
-                                            className="form-control"
-                                        />
-                                    </div>
-                                    <div className="form-group ">
-                                        <label>Quantity</label>
-                                        <input
-                                            type="text"
-                                            value={itemDetails.quantity}
-                                            placeholder="Quantity"
-                                            className="form-control"
-                                        />
-                                    </div>
-                                    
-                                  
-                                    
-                                </div>
-                                <div className="col-sm-4">
-                                   
-                                    <div className="form-group">
-                                        <label>IGST</label>
-                                        <input
-                                            type="text"
-                                            value={itemDetails.igst}
-                                            placeholder="IGST"
-                                            className="form-control"
-                                        />
-                                    </div>
-                                    <div className="form-group">
-                                        <label>HSN</label>
-                                        <input
-                                            type="text"
-                                            value={itemDetails.hsn}
-                                            placeholder="HSN"
-                                            className="form-control"
-                                        />
-                                    </div>
-                                    <div className="form-group">
-                                        <label>Bill No</label>
-                                        <input
-                                            type="text"
-                                            value={itemDetails.billNo}
-                                            placeholder="Bill No"
-                                            className="form-control"
-                                        />
-                                    </div>
-                                    <div className="form-group">
-                                        <label>Rate</label>
-                                        <input
-                                            type="text"
-                                            value={itemDetails.rate}
-                                            placeholder="Rate"
-                                            className="form-control"
-                                        />
-                                    </div>
-                                   
-                                </div>
-                                <div className='col-sm-4'>
-                                <div className="form-group">
-                                        <label>Offer Rate</label>
-                                        <input
-                                            type="text"
-                                            value={itemDetails.offerRate}
-                                            placeholder="Offer Rate"
-                                            className="form-control"
-                                        />
-                                    </div>
+                            
 
-                                    <div className="form-group">
-                                        <label>CGST</label>
-                                        <input
-                                            type="text"
-                                            value={itemDetails.cgst}
-                                            placeholder="CGST"
-                                            className="form-control"
-                                        />
-                                    </div>
-                                    <div className="form-group">
-                                        <label>SGST</label>
-                                        <input
-                                            type="text"
-                                            value={itemDetails.sgst}
-                                            placeholder="SGST"
-                                            className="form-control"
-                                        />
-                                    </div>
-                                    <div className="form-group">
-                                        <label>Net Rate</label>
-                                        <input
-                                            type="text"
-                                            value={itemDetails.netRate}
-                                            placeholder="Net Rate"                                            className="form-control"
-                                        />
-                                    </div>
-
-                                </div>
-                            </div>
-                        </form>
+                            {isFormVisiblee && (
+             <div className="card-body ">
+             <form className=''>
+                 <div className="row ">
+                     <div className="col-sm-4">
+                     <div className="form-group">
+                         <label>Batch No</label>
+                          <select
+                              value={selectedItem}
+                          onChange={handleItemChange}
+                      className="form-control"
+                        placeholder='Select an item'
+                          >
+                                  <option value="" disabled>Batch No</option>
+                              {recordsItem.map((item) => (
+                                    <option key={item.itemId} value={item.itemId}>
+                              {item.batch}
+                                  </option>
+                                    ))}
+                                  </select>
+                                  </div>
+                              <div className="form-group ">
+                             <label>Item Name</label>
+                             <input
+                                 type="text"
+                                 value={itemDetails.itemName}
+                                 placeholder="Item Name"
+                                 className="form-control"
+                             />
+                         </div>
+                         
+                         <div className="form-group ">
+                             <label>Expiry</label>
+                             <input
+                                 type="date"
+                                 value={itemDetails.expiry}
+                                 placeholder="Expiry"
+                                 className="form-control"
+                             />
+                         </div>
+                         <div className="form-group ">
+                             <label>Quantity</label>
+                             <input
+                                 type="text"
+                                 value={itemDetails.quantity}
+                                 placeholder="Quantity"
+                                 className="form-control"
+                             />
+                         </div>
+                         
                        
-                    </div>
+                         
+                     </div>
+                     <div className="col-sm-4">
+                        
+                         <div className="form-group">
+                             <label>IGST</label>
+                             <input
+                                 type="text"
+                                 value={itemDetails.igst}
+                                 placeholder="IGST"
+                                 className="form-control"
+                             />
+                         </div>
+                         <div className="form-group">
+                             <label>HSN</label>
+                             <input
+                                 type="text"
+                                 value={itemDetails.hsn}
+                                 placeholder="HSN"
+                                 className="form-control"
+                             />
+                         </div>
+                         <div className="form-group">
+                             <label>Bill No</label>
+                             <input
+                                 type="text"
+                                 value={itemDetails.billNo}
+                                 placeholder="Bill No"
+                                 className="form-control"
+                             />
+                         </div>
+                         <div className="form-group">
+                             <label>Rate</label>
+                             <input
+                                 type="text"
+                                 value={itemDetails.rate}
+                                 placeholder="Rate"
+                                 className="form-control"
+                             />
+                         </div>
+                        
+                     </div>
+                     <div className='col-sm-4'>
+                     <div className="form-group">
+                             <label>Offer Rate</label>
+                             <input
+                                 type="text"
+                                 value={itemDetails.offerRate}
+                                 placeholder="Offer Rate"
+                                 className="form-control"
+                             />
+                         </div>
+
+                         <div className="form-group">
+                             <label>CGST</label>
+                             <input
+                                 type="text"
+                                 value={itemDetails.cgst}
+                                 placeholder="CGST"
+                                 className="form-control"
+                             />
+                         </div>
+                         <div className="form-group">
+                             <label>SGST</label>
+                             <input
+                                 type="text"
+                                 value={itemDetails.sgst}
+                                 placeholder="SGST"
+                                 className="form-control"
+                             />
+                         </div>
+                         <div className="form-group">
+                             <label>Net Rate</label>
+                             <input
+                                 type="text"
+                                 value={itemDetails.netRate}
+                                 placeholder="Net Rate"                                            className="form-control"
+                             />
+                         </div>
+
+                     </div>
+                 </div>
+                 <div className='row'>
+                 <div className="col-sm-6">
+                 <div className="form-group">
+                          <label>Order Quantity</label>
+                          <input
+                            value={quantity}
+                            onChange={handleQuantityChange}
+                            className="form-control"
+                          />
+                        </div>
+
+                 </div>
+                 <div className='col-sm-6'>
+                 <div className="form-group">
+                            <label>Total Order Amount</label>
+                            <input
+                              // type="number"
+                              value={totalAmount}
+                              className="form-control"
+                              min="1"
+                            />
+                          </div>
+                       
+                 </div>
+
+
+                 </div>
+             </form>
+            
+         </div>
+          )}
+                   
+                   
                 </div>
 
                 </div>
